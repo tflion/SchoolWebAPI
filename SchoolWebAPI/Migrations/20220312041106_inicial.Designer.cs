@@ -10,7 +10,7 @@ namespace SchoolWebAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20220312041106_inicial")]
-    partial class inicial
+    partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
