@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolWebAPI", "SchoolWebAPI\SchoolWebAPI.csproj", "{D902BFE8-78EA-416D-B21B-D4C214B69103}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolWebAPI", "SchoolWebAPI\SchoolWebAPI.csproj", "{D902BFE8-78EA-416D-B21B-D4C214B69103}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolWebAPI.Business", "SchoolWebAPI.Businesss\SchoolWebAPI.Business.csproj", "{10427BBF-0D29-426C-AF4A-0E118CE417E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D902BFE8-78EA-416D-B21B-D4C214B69103}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D902BFE8-78EA-416D-B21B-D4C214B69103}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D902BFE8-78EA-416D-B21B-D4C214B69103}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10427BBF-0D29-426C-AF4A-0E118CE417E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10427BBF-0D29-426C-AF4A-0E118CE417E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10427BBF-0D29-426C-AF4A-0E118CE417E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10427BBF-0D29-426C-AF4A-0E118CE417E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

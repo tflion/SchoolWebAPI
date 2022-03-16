@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
+using SchoolWebAPI.Business.Services.Interfaces;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SchoolWebAPI.Controllers
 {
@@ -10,13 +8,17 @@ namespace SchoolWebAPI.Controllers
     [Route("[controller]")]
     public class AlunoController : ControllerBase
     {
-
-        readonly List<string> alunos = new List<string> { "Thales", "Lucas", "Helena" };
+        private readonly IAlunoService _alunoService;
+        public AlunoController(IAlunoService alunoService)
+        {
+            _alunoService = alunoService;
+        }    
 
         [HttpGet]
+        [Route("/Alunos")]
         public IEnumerable<string> GetAlunos()
         {
-            return alunos;
+            return _alunoService.GetAlunos();
         }
 
     }

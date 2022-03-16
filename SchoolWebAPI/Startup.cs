@@ -1,18 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using SchoolWebAPI.Business.Repository;
+using SchoolWebAPI.Business.Repository.Interfaces;
+using SchoolWebAPI.Business.Services;
+using SchoolWebAPI.Business.Services.Interfaces;
 using SchoolWebAPI.Data.Context;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SchoolWebAPI
 {
@@ -34,6 +31,9 @@ namespace SchoolWebAPI
             options.UseMySql(mySqlConnection, ServerVersion.AutoDetect(mySqlConnection)));
 
             services.AddControllers();
+            services.AddScoped<IAlunoService, AlunoService>();
+            services.AddScoped<IAlunoRepository, AlunoRepository>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SchoolWebAPI", Version = "v1" });
