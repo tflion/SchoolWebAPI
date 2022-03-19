@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SchoolWebAPI.Business.Services.Interfaces
+namespace SchoolWebAPI.Data.Repository.Interfaces
 {
-    public interface IAlunoService
+    public interface IAlunoRepository
     {
         Task<List<Aluno>> GetAlunosAsync();
     }

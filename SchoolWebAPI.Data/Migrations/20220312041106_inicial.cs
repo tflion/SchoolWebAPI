@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace SchoolWebAPI.Migrations
+namespace SchoolWebAPI.Data.Migrations
 {
     public partial class Inicial : Migration
     {

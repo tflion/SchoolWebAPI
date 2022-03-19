@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SchoolWebAPI.Business.Services.Interfaces;
+using SchoolWebAPI.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SchoolWebAPI.Controllers
 {
@@ -16,9 +18,9 @@ namespace SchoolWebAPI.Controllers
 
         [HttpGet]
         [Route("/Alunos")]
-        public IEnumerable<string> GetAlunos()
+        public async Task<List<Aluno>> GetAlunos()
         {
-            return _alunoService.GetAlunos();
+            return await _alunoService.GetAlunosAsync();
         }
 
     }

@@ -1,7 +1,8 @@
-﻿using SchoolWebAPI.Business.Repository;
-using SchoolWebAPI.Business.Repository.Interfaces;
+﻿using SchoolWebAPI.Data.Repository.Interfaces;
 using SchoolWebAPI.Business.Services.Interfaces;
 using System.Collections.Generic;
+using SchoolWebAPI.Models;
+using System.Threading.Tasks;
 
 namespace SchoolWebAPI.Business.Services
 {
@@ -12,9 +13,9 @@ namespace SchoolWebAPI.Business.Services
         {
             _alunoRepository = alunoRepository;
         }
-        public List<string> GetAlunos()
+        public async Task<List<Aluno>> GetAlunosAsync()
         {
-            return _alunoRepository.GetListaAlunos();
+            return await _alunoRepository.GetAlunosAsync();
 
         }
     }
