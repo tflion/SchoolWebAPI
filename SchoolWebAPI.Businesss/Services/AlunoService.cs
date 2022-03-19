@@ -3,6 +3,7 @@ using SchoolWebAPI.Business.Services.Interfaces;
 using System.Collections.Generic;
 using SchoolWebAPI.Models;
 using System.Threading.Tasks;
+using System;
 
 namespace SchoolWebAPI.Business.Services
 {
@@ -17,6 +18,11 @@ namespace SchoolWebAPI.Business.Services
         {
             return await _alunoRepository.GetAlunosAsync();
 
+        }
+
+        public async Task<Aluno> InsertAlunoAsync(string nome, string cpf, string telefone, DateTime dataNascimento)
+        {
+            return await _alunoRepository.InsertAlunoAsync( nome, cpf, telefone, dataNascimento);
         }
     }
 }

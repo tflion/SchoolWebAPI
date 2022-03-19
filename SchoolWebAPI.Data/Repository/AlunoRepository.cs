@@ -16,7 +16,7 @@ namespace SchoolWebAPI.Data.Repository
         private readonly IConfiguration _configuracoes;
 
         private string Conexao {  get { return _configuracoes.GetConnectionString("DefaultConnection"); } }
-
+        
         public AlunoRepository(IConfiguration configuracoes)
         {
             _configuracoes = configuracoes;
@@ -29,6 +29,28 @@ namespace SchoolWebAPI.Data.Repository
             var alunos = await conexao.QueryAsync<Aluno>("SELECT * FROM aluno");
 
             return alunos.ToList();
+        }
+
+        public async Task<Aluno> InsertAlunoAsync(string nome, string cpf, string telefone, DateTime dataNascimento)
+        {
+            using var conexao = new MySqlConnection(Conexao);
+
+            await conexao.ExecuteAsync("INSERT INTO aluno (Nome, CPF, Telefone, DataNascimento) VALUES (@Nome, @CPF, @Telefone, @DataNascimento)", new Aluno
+            {
+                Nome = nome,
+                CPF = cpf,
+                Telefone = telefone,
+                DataNascimento = dataNascimento
+            });
+
+            return new Aluno 
+            { 
+               Nome = nome,
+               CPF = cpf,
+               Telefone = telefone,
+               DataNascimento = dataNascimento
+            };
+
         }
     }
 }
